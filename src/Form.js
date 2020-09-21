@@ -23,8 +23,9 @@ export default class Form extends Component {
   async handleSubmit(event) {
     event.preventDefault();
     const { name, message } = this.state;
+    const proxyurl = "https://cors-anywhere.herokuapp.com/";
     await axios.post(
-      'https://58f6caosl8.execute-api.us-east-2.amazonaws.com/default/serverlessAppFunction',
+      proxyurl+'https://58f6caosl8.execute-api.us-east-2.amazonaws.com/default/serverlessAppFunction',
       { key1: `${name}, ${message}` }
     );
     console.log('ho gya');
